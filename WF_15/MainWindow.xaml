@@ -1,0 +1,31 @@
+﻿<Window x:Class="WF_15.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WF_15"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="650" Width="1000">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Border BorderThickness="2" BorderBrush="DarkBlue" Grid.Row="2" Grid.ColumnSpan="2">
+            <StackPanel Name="SList" Background="AliceBlue" Orientation="Horizontal"/>
+        </Border>
+
+        <Border Margin="10" BorderThickness="2" BorderBrush="DarkBlue">
+            <TextBox Name="Weight" Background="WhiteSmoke" FontSize="40" Text="Weight" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        </Border>
+        <Border Margin="10" BorderThickness="2" BorderBrush="DarkBlue" Grid.Row="1">
+            <TextBox Name="Height" Background="WhiteSmoke" FontSize="40" Text="Height" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        </Border>
+    </Grid>
+</Window>
