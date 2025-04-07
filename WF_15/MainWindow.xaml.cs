@@ -31,6 +31,42 @@ namespace WF_15
             Weight.GotFocus += FocusEvent;
             Height.LostFocus += LostFocusEvent;
             Weight.LostFocus += LostFocusEvent;
+            Height.KeyUp += EnterEvent;
+            Weight.KeyUp += EnterEvent;
+        }
+        private void EnterEvent(object obj, KeyEventArgs arg)
+        {
+            if (arg.Key == Key.Enter)
+            {
+                int height = -1;
+                int weight = -1;
+                int.TryParse(Weight.Text.Trim(' '), out int rw);
+                weight = rw;
+                int.TryParse(Height.Text.Trim(' '), out int rh);
+                height = rh;
+                if (height > 0 && weight > 0)
+                {
+                    MessageBox.Show($"Magasság: {height}, Súly: {weight}");
+                    SList.Children.Add(new TextBox
+                    {
+                        Text = $"BMI: {CalcBMI(height, weight)}, {NameType(CalcBMI(height, weight))}"
+                    });
+                }
+            }
+        }
+        private double CalcBMI(int height, int weight)
+        {
+            return weight / Math.Pow((double)height / 100, 2);
+        }
+        private string NameType(double BMI)
+        {
+            if (BMI < 18.5)
+                return "Sovány";
+            if (BMI < 24.9)
+                return "Normál";
+            if (BMI < 29.9)
+                return "Túlsúlyos";
+            return "Nagyon túlsúlyos";
         }
         private void FocusEvent(object obj, EventArgs arg)
         {
