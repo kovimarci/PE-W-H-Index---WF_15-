@@ -23,6 +23,26 @@ namespace WF_15
         public MainWindow()
         {
             InitializeComponent();
+            Main();
+        }
+        private void Main()
+        {
+            Height.GotFocus += FocusEvent;
+            Weight.GotFocus += FocusEvent;
+            Height.LostFocus += LostFocusEvent;
+            Weight.LostFocus += LostFocusEvent;
+        }
+        private void FocusEvent(object obj, EventArgs arg)
+        {
+            TextBox t = obj as TextBox;
+            if(t.Text == t.Name.ToString())
+                t.Clear();
+        }
+        private void LostFocusEvent(object obj, EventArgs arg)
+        {
+            TextBox t = obj as TextBox;
+            if (t.Text.Length < 1)
+                t.Text = t.Name;
         }
     }
 }

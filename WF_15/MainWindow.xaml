@@ -22,10 +22,10 @@
         </Border>
 
         <Border Margin="10" BorderThickness="2" BorderBrush="DarkBlue">
-            <TextBox Name="Weight" Background="WhiteSmoke" FontSize="40" Text="Weight" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <TextBox Name="Weight" Background="WhiteSmoke" FontSize="40" Text="Weight" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Harlow Solid Italic"/>
         </Border>
         <Border Margin="10" BorderThickness="2" BorderBrush="DarkBlue" Grid.Row="1">
-            <TextBox Name="Height" Background="WhiteSmoke" FontSize="40" Text="Height" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <TextBox Name="Height" Background="WhiteSmoke" FontSize="40" Text="Height" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Harlow Solid Italic"/>
         </Border>
     </Grid>
 </Window>
